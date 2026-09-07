@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+/* Class-based dark mode toggle (next-themes attribute="class") */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  MOBFACTORY DESIGN SYSTEM
+  Primary: white · Secondary: #0F102C (deep navy/near-black)
+  Light mode  → white canvas, navy ink
+  Dark mode   → deep navy canvas, white ink
+*/
+:root {
+  --bg: #ffffff;
+  --bg-subtle: #f6f6f4;
+  --bg-elevated: #ffffff;
+  --fg: #0f102c;
+  --fg-muted: #5c5d70;
+  --fg-faint: #8b8c9c;
+  --border: #e6e6e2;
+  --border-strong: #d3d3cf;
+  --accent: #0f102c;
+  --accent-fg: #ffffff;
+  --ring: #0f102c;
+}
+
+.dark {
+  --bg: #07081a;
+  --bg-subtle: #0f102c;
+  --bg-elevated: #14163a;
+  --fg: #f4f4f6;
+  --fg-muted: #a9aabf;
+  --fg-faint: #74758c;
+  --border: #22244a;
+  --border-strong: #2f3160;
+  --accent: #ffffff;
+  --accent-fg: #0f102c;
+  --ring: #ffffff;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-faint: var(--fg-faint);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-albert);
+  --font-display: var(--font-bebas);
+
+  --tracking-luxe: 0.22em;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Bebas Neue (display) is condensed all-caps; a hair of tracking keeps it
+   legible at large sizes and matches the gymkha headline treatment. */
+.font-display {
+  font-family: var(--font-display), Impact, "Arial Narrow", sans-serif;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+}
+
+/* Utility: uppercase eyebrow / label */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-luxe);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--fg-muted);
+}
+
+/* Thin, refined scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+/* Hide scrollbar (used on horizontal pill rows) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Marquee for the announcement bar */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+/* Subtle reveal-on-scroll fallback (enhanced by framer-motion where used) */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Image zoom on hover for product cards */
+.card-media img {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.group:hover .card-media img {
+  transform: scale(1.045);
+}
+
+/* Underline-grow link */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
