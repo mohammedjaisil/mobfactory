@@ -244,6 +244,17 @@ export function getFeatured() {
   return products.filter((p) => p.featured);
 }
 
+export function getNewIn(limit = 6) {
+  const ranked = [
+    ...products.filter((p) => p.badge === "New"),
+    ...products.filter((p) => p.badge === "Limited"),
+    ...products.filter((p) => !p.badge),
+    ...products,
+  ];
+  const seen = new Set<string>();
+  return ranked.filter((p) => (seen.has(p.slug) ? false : seen.add(p.slug))).slice(0, limit);
+}
+
 export function getBestSellers(limit = 6) {
   const ranked = [
     ...products.filter((p) => p.badge === "Bestseller"),
