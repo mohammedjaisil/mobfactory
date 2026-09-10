@@ -6,7 +6,6 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { CartDrawer } from "@/components/cart-drawer";
 import { AnnouncementBar } from "@/components/announcement-bar";
-import { SpecTicker } from "@/components/spec-ticker";
 
 // Body / UI — Manrope carries the heavy uppercase label scale without smearing
 const manrope = Manrope({
@@ -59,7 +58,6 @@ export default function RootLayout({
         >
           <AnnouncementBar />
           <Header />
-          <SpecTicker />
           <main className="min-h-[60vh]">{children}</main>
           <Footer />
           <CartDrawer />
