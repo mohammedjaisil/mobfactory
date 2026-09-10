@@ -13,12 +13,12 @@ export function BestSellers() {
       <div className="mx-auto max-w-[1680px] px-4 sm:px-6 lg:px-10">
         {/* Heading */}
         <Reveal className="flex flex-col items-center text-center">
-          <p className="eyebrow text-accent">Most wanted</p>
+          <p className="label-sm text-brand">Heavy rotation</p>
           <h2 className="mt-3 font-display text-6xl uppercase leading-[0.9] sm:text-7xl lg:text-8xl">
             Best Sellers
           </h2>
           <p className="mt-4 max-w-md text-sm text-fg-muted">
-            The pieces men reach for first — restocked, refined and ready to wear.
+            The pieces the mob reaches for first — restocked, refined, ready to train.
           </p>
         </Reveal>
 
@@ -28,7 +28,7 @@ export function BestSellers() {
             <Reveal key={p.slug} delay={(i % 6) * 0.05}>
               <Link
                 href={`/product/${p.slug}`}
-                className="group relative block aspect-[3/4] overflow-hidden rounded-2xl bg-bg"
+                className="group relative block aspect-[3/4] overflow-hidden rounded-lg bg-bg"
               >
                 <div className="card-media absolute inset-0">
                   <ProductImage
@@ -42,7 +42,7 @@ export function BestSellers() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/5 to-black/20" />
 
                 {/* Tag pill */}
-                <span className="absolute left-3 top-3 rounded-full bg-accent px-2.5 py-1 text-[0.55rem] font-semibold uppercase tracking-[0.12em] text-accent-fg">
+                <span className="absolute left-3 top-3 bg-obsidian px-2.5 py-1 text-[0.55rem] font-extrabold uppercase tracking-[0.12em] text-chalk">
                   {p.badge ?? "Best Seller"}
                 </span>
 
@@ -57,7 +57,7 @@ export function BestSellers() {
                     </h3>
                     <p className="mt-1.5 text-xs text-white/85">{formatPrice(p.price)}</p>
                   </div>
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/95 text-[#0f102c] transition-transform group-hover:scale-105">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/95 text-obsidian transition-transform group-hover:scale-105">
                     <ArrowUpRight className="h-3.5 w-3.5" />
                   </span>
                 </div>
@@ -70,7 +70,7 @@ export function BestSellers() {
         <div className="mt-12 flex justify-center">
           <Link
             href="/shop?sort=new"
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-accent-fg transition-transform hover:scale-[1.03]"
+            className="inline-flex items-center gap-2 bg-obsidian px-8 py-3.5 label-lg text-chalk transition-transform hover:scale-[1.03]"
           >
             Shop best sellers
             <ArrowRight className="h-4 w-4" />

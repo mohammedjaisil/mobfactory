@@ -10,10 +10,10 @@ export function NewIn() {
       <div className="mx-auto max-w-[1680px] px-4 sm:px-6 lg:px-10">
         {/* Heading row (H&M style) */}
         <div className="mb-8 flex items-baseline gap-5">
-          <h2 className="font-display text-3xl uppercase leading-none sm:text-4xl">New In</h2>
+          <h2 className="font-display text-3xl uppercase leading-none sm:text-4xl">Drop 04</h2>
           <Link
             href="/shop?sort=new"
-            className="text-xs font-semibold uppercase tracking-[0.12em] text-fg-muted underline underline-offset-4 transition-colors hover:text-fg"
+            className="label-sm text-fg-muted underline underline-offset-4 transition-colors hover:text-brand"
           >
             View All
           </Link>

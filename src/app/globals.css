@@ -4,37 +4,41 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
-  MOBFACTORY DESIGN SYSTEM
-  Primary: white · Secondary: #0F102C (deep navy/near-black)
-  Light mode  → white canvas, navy ink
-  Dark mode   → deep navy canvas, white ink
+  MOB FACTORY — HEAVY IRON ATHLETIC CO.
+  Obsidian ink · Varsity blue accent · Chalk white canvas.
+
+  Light mode → chalk canvas, obsidian ink, blue accent
+  Dark mode  → obsidian canvas, chalk ink, blue accent (unchanged — the
+               accent is a brand constant, not a theme response)
 */
 :root {
-  --bg: #ffffff;
-  --bg-subtle: #f6f6f4;
+  --bg: #fbfbfb;
+  --bg-subtle: #f4f4f5;
   --bg-elevated: #ffffff;
-  --fg: #0f102c;
-  --fg-muted: #5c5d70;
-  --fg-faint: #8b8c9c;
-  --border: #e6e6e2;
-  --border-strong: #d3d3cf;
-  --accent: #0f102c;
+  --fg: #111827;
+  --fg-muted: #52525b;
+  --fg-faint: #71717a;
+  --border: #e5e7eb;
+  --border-strong: #d4d4d8;
+  --accent: #0a0a0b;
   --accent-fg: #ffffff;
-  --ring: #0f102c;
+  --brand: #1e3a8a;
+  --ring: #1e3a8a;
 }
 
 .dark {
-  --bg: #07081a;
-  --bg-subtle: #0f102c;
-  --bg-elevated: #14163a;
-  --fg: #f4f4f6;
-  --fg-muted: #a9aabf;
-  --fg-faint: #74758c;
-  --border: #22244a;
-  --border-strong: #2f3160;
+  --bg: #0a0a0b;
+  --bg-subtle: #131315;
+  --bg-elevated: #18181b;
+  --fg: #fafafa;
+  --fg-muted: #a1a1aa;
+  --fg-faint: #71717a;
+  --border: #27272a;
+  --border-strong: #3f3f46;
   --accent: #ffffff;
-  --accent-fg: #0f102c;
-  --ring: #ffffff;
+  --accent-fg: #0a0a0b;
+  --brand: #93b4fd;
+  --ring: #93b4fd;
 }
 
 @theme inline {
@@ -49,8 +53,23 @@
   --color-accent: var(--accent);
   --color-accent-fg: var(--accent-fg);
   --color-ring: var(--ring);
+  /* Accent that must stay legible on the page canvas — lightens in dark mode,
+     unlike the fixed --color-varsity used on the constant obsidian panels. */
+  --color-brand: var(--brand);
 
-  --font-sans: var(--font-albert);
+  /* Brand constants — identical in both themes. Dark panels are a deliberate
+     part of the identity (the "iron" sections), not a dark-mode artifact. */
+  --color-obsidian: #0a0a0b;
+  --color-obsidian-soft: #18181b;
+  --color-chalk: #ffffff;
+  --color-heather: #e5e7eb;
+  --color-navy: #0f102c;
+  --color-varsity: #1e3a8a;
+  --color-varsity-bright: #2563eb;
+  --color-varsity-soft: #bfdbfe;
+  --color-iron-green: #15803d;
+
+  --font-sans: var(--font-manrope);
   --font-display: var(--font-bebas);
 
   --tracking-luxe: 0.22em;
@@ -72,12 +91,40 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Bebas Neue (display) is condensed all-caps; a hair of tracking keeps it
-   legible at large sizes and matches the gymkha headline treatment. */
+/* These live in the components layer so Tailwind utilities (size, colour,
+   tracking) can still override them at the call site. */
+@layer components {
+/* Bebas Neue (display) is condensed all-caps; MOB FACTORY runs it wide and
+   loud — the extra tracking is what makes it read as stencilled iron. */
 .font-display {
   font-family: var(--font-display), Impact, "Arial Narrow", sans-serif;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.04em;
   font-weight: 400;
+}
+
+/* --- Label scale ---------------------------------------------------------
+   Three sizes of the same idea: tiny, hard-tracked, heavy uppercase text.
+   Used for eyebrows, spec chips, badges and buttons across the whole site. */
+.label-xs {
+  font-size: 0.625rem;
+  line-height: 0.75rem;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.label-sm {
+  font-size: 0.6875rem;
+  line-height: 0.875rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.label-lg {
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 /* Utility: uppercase eyebrow / label */
@@ -85,8 +132,19 @@ body {
   text-transform: uppercase;
   letter-spacing: var(--tracking-luxe);
   font-size: 0.7rem;
-  font-weight: 500;
+  font-weight: 800;
   color: var(--fg-muted);
+}
+
+/* Rotated-square bullet — the house separator, used between wordmark halves,
+   inside the alert bar and along the footer rule. */
+.diamond {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  rotate: 45deg;
+  background: var(--color-varsity);
+}
 }
 
 /* Thin, refined scrollbar */
@@ -103,8 +161,8 @@ body {
 }
 
 ::selection {
-  background: var(--fg);
-  color: var(--bg);
+  background: var(--color-varsity);
+  color: var(--color-chalk);
 }
 
 /* Hide scrollbar (used on horizontal pill rows) */
@@ -116,13 +174,22 @@ body {
   scrollbar-width: none;
 }
 
-/* Marquee for the announcement bar */
+/* Marquee for the announcement bar / spec ticker */
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
 .animate-marquee {
   animation: marquee 28s linear infinite;
+}
+.animate-marquee-fast {
+  animation: marquee 18s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-fast {
+    animation: none;
+  }
 }
 
 /* Subtle reveal-on-scroll fallback (enhanced by framer-motion where used) */

@@ -30,15 +30,15 @@ function Tile({ t, priority, sizes }: { t: (typeof TILES)[number]; priority?: bo
   return (
     <Link
       href={t.href}
-      className="group relative block h-full w-full overflow-hidden rounded-xl bg-[#0f102c]"
+      className="group relative block h-full w-full overflow-hidden rounded-xl bg-obsidian"
     >
       <ProductImage src={t.img} alt={t.label} label={t.label} priority={priority} sizes={sizes} />
       <div className="absolute inset-0 bg-black/25 transition-colors duration-500 group-hover:bg-black/10" />
       <span className="absolute left-3 top-3 rounded-md bg-black/45 px-3 py-1.5 text-[0.68rem] font-medium uppercase tracking-[0.12em] text-white backdrop-blur-sm">
         {t.label}
       </span>
-      <span className="pointer-events-none absolute inset-x-0 bottom-3 text-center text-[0.55rem] font-semibold uppercase tracking-[0.28em] text-white/55">
-        MOBFACTORY
+      <span className="pointer-events-none absolute inset-x-0 bottom-3 text-center text-[0.55rem] font-extrabold uppercase tracking-[0.28em] text-white/55">
+        MOB FACTORY
       </span>
     </Link>
   );
@@ -47,11 +47,11 @@ function Tile({ t, priority, sizes }: { t: (typeof TILES)[number]; priority?: bo
 function Heading() {
   return (
     <>
-      <p className="text-[0.7rem] font-medium uppercase tracking-[0.28em] text-white/50">
-        Shop by Category
+      <p className="label-sm text-varsity-soft">
+        Mob Department Filter
       </p>
       <h2 className="mt-2 font-display text-4xl uppercase leading-none sm:text-6xl">
-        Signature Styles
+        Iron Divisions
       </h2>
     </>
   );
@@ -80,7 +80,7 @@ export function CategoryGrid() {
 
   if (lite) {
     return (
-      <section className="bg-[#07081a] py-16 text-white">
+      <section className="bg-obsidian py-16 text-white">
         <div className="mx-auto max-w-[1680px] px-4 sm:px-6">
           <div className="mb-8 text-center">
             <Heading />
@@ -98,7 +98,7 @@ export function CategoryGrid() {
   }
 
   return (
-    <section ref={ref} className="relative h-[200vh] bg-[#07081a] text-white">
+    <section ref={ref} className="relative h-[200vh] bg-obsidian text-white">
       <div className="sticky top-0 flex h-screen flex-col items-center justify-center gap-4 overflow-hidden px-4 sm:px-6 lg:px-8">
         <motion.div
           style={{ opacity: headingOpacity }}

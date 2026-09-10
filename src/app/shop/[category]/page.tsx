@@ -51,7 +51,7 @@ export default async function CategoryPage({
   return (
     <>
       <PageHeader
-        eyebrow="Menswear"
+        eyebrow="Heavy Iron Division"
         title={CATEGORY_LABELS[cat]}
         description={DESCRIPTIONS[cat]}
       />

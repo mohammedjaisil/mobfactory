@@ -46,7 +46,7 @@ export function CartDrawer() {
       >
         {/* Header */}
         <div className="flex items-center justify-between border-b border-border px-5 py-4">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em]">
+          <h2 className="label-lg">
             Your Bag ({items.length})
           </h2>
           <button aria-label="Close bag" onClick={close}>
@@ -159,7 +159,7 @@ export function CartDrawer() {
             <p className="mt-1 text-xs text-fg-faint">
               Taxes and shipping calculated at checkout.
             </p>
-            <button className="mt-4 w-full bg-accent py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-accent-fg transition-opacity hover:opacity-90">
+            <button className="mt-4 w-full bg-accent py-3.5 label-lg text-accent-fg transition-opacity hover:opacity-90">
               Proceed to Checkout
             </button>
             <button

@@ -42,7 +42,7 @@ export default async function ProductPage({
       <section className="border-t border-border">
         <div className="mx-auto max-w-[1680px] px-4 py-16 sm:px-6 lg:px-10">
           <div className="mb-8 flex items-end justify-between">
-            <h2 className="font-display text-3xl font-light sm:text-4xl">You may also like</h2>
+            <h2 className="font-display text-3xl uppercase sm:text-4xl">You may also like</h2>
           </div>
           <div className="grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-4">
             {related.map((p) => (

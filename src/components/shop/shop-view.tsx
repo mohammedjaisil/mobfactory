@@ -131,7 +131,7 @@ export function ShopView({
       {filtersOpen && (
         <div className="mb-8 flex flex-wrap items-center gap-x-8 gap-y-4 border border-border bg-bg-subtle p-5">
           <div>
-            <p className="eyebrow mb-2">Size</p>
+            <p className="label-sm mb-2 text-fg-muted">Size</p>
             <div className="flex flex-wrap gap-2">
               {allSizes.map((s) => (
                 <button
@@ -150,7 +150,7 @@ export function ShopView({
             </div>
           </div>
           <div>
-            <p className="eyebrow mb-2">Offers</p>
+            <p className="label-sm mb-2 text-fg-muted">Offers</p>
             <button
               onClick={() => setOnSale((v) => !v)}
               className="flex items-center gap-2 text-xs"

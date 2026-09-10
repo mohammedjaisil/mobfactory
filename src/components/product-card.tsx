@@ -61,7 +61,7 @@ export function ProductCard({ product, priority }: { product: Product; priority?
     <div className="group">
       {/* Media */}
       <div
-        className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-bg-subtle"
+        className="relative aspect-[3/4] overflow-hidden rounded-lg bg-bg-subtle"
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => {
           setHovering(false);
@@ -141,14 +141,14 @@ export function ProductCard({ product, priority }: { product: Product; priority?
 
         {/* Discount badge */}
         {discount > 0 && (
-          <span className="absolute bottom-3 left-3 z-20 rounded-full bg-accent px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-accent-fg">
+          <span className="absolute bottom-3 left-3 z-20 bg-varsity px-3 py-1 label-xs text-chalk">
             {discount}% Off
           </span>
         )}
 
         {/* Select-size panel (slides up on hover) */}
         <div className="absolute inset-x-0 bottom-0 z-30 translate-y-full bg-bg/95 p-4 backdrop-blur transition-transform duration-300 ease-out group-hover:translate-y-0">
-          <p className="mb-2.5 text-center text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-fg-muted">
+          <p className="mb-2.5 text-center label-xs text-fg-muted">
             Select Size
           </p>
           <div className="flex flex-wrap justify-center gap-1.5">
@@ -157,10 +157,10 @@ export function ProductCard({ product, priority }: { product: Product; priority?
                 key={size}
                 onClick={(e) => quickAdd(e, size)}
                 className={cn(
-                  "flex h-8 min-w-8 items-center justify-center rounded-md border px-2 text-xs font-medium transition-colors",
+                  "flex h-8 min-w-8 items-center justify-center border px-2 text-xs font-bold transition-colors",
                   addedSize === size
-                    ? "border-fg bg-accent text-accent-fg"
-                    : "border-border hover:border-fg hover:bg-accent hover:text-accent-fg"
+                    ? "border-varsity bg-varsity text-chalk"
+                    : "border-border hover:border-obsidian hover:bg-obsidian hover:text-chalk"
                 )}
               >
                 {addedSize === size ? <Check className="h-3.5 w-3.5" /> : size}
@@ -173,7 +173,7 @@ export function ProductCard({ product, priority }: { product: Product; priority?
       {/* Info */}
       <div className="mt-3 space-y-1">
         <Link href={`/product/${product.slug}`}>
-          <h3 className="text-sm font-semibold uppercase tracking-tight leading-snug">
+          <h3 className="text-[13px] font-bold uppercase leading-tight">
             {product.name}
           </h3>
         </Link>

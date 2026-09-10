@@ -44,7 +44,7 @@ export function ProductImage({
         <div className="flex flex-col items-center gap-2 px-4 text-center">
           <span className="font-display text-3xl leading-none text-fg-faint">MF</span>
           <span className="eyebrow text-[0.55rem] text-fg-faint">
-            {label ?? "MOBFACTORY"}
+            {label ?? "MOB FACTORY"}
           </span>
         </div>
       </div>

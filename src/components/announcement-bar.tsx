@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const MESSAGES = [
-  "Get 10% off your first order — use code NEW10",
-  "Free express shipping on orders over ₹2,999",
-  "The Collector Series — Autumn drop now live",
-  "30-day easy returns, India-wide",
-  "New arrivals every Thursday",
+  "Members exclusive Drop 04 — free shipping over ₹999",
+  "260 GSM comb-ring cotton · zero-deform ribs",
+  "Batch 04 is live — limited run of 600 units",
+  "4-day doorstep size exchanges, India-wide",
+  "Prepaid orders unlock The Mob Syndicate Tier 01",
 ];
 
+/** High-voltage alert strip: obsidian ground, diamond bullets, rotating copy. */
 export function AnnouncementBar() {
   const [index, setIndex] = useState(0);
 
@@ -22,7 +23,8 @@ export function AnnouncementBar() {
   }, []);
 
   return (
-    <div className="relative flex h-9 items-center justify-center overflow-hidden border-b border-border bg-accent text-accent-fg">
+    <div className="relative flex h-9 items-center justify-center gap-2 overflow-hidden border-b border-white/10 bg-obsidian px-4 text-chalk">
+      <span className="diamond h-1.5 w-1.5 shrink-0" />
       <AnimatePresence mode="wait">
         <motion.p
           key={index}
@@ -30,11 +32,12 @@ export function AnnouncementBar() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="px-4 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em]"
+          className="label-xs truncate text-center"
         >
           {MESSAGES[index]}
         </motion.p>
       </AnimatePresence>
+      <span className="diamond h-1.5 w-1.5 shrink-0" />
     </div>
   );
 }

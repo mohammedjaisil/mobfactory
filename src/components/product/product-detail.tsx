@@ -84,7 +84,7 @@ export function ProductDetail({ product }: { product: Product }) {
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             {product.badge && (
-              <span className="absolute left-4 top-4 bg-accent px-3 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-accent-fg">
+              <span className="absolute left-4 top-4 bg-varsity px-3 py-1.5 label-xs text-chalk">
                 {product.badge}
               </span>
             )}
@@ -93,8 +93,8 @@ export function ProductDetail({ product }: { product: Product }) {
 
         {/* Purchase panel */}
         <div className="lg:sticky lg:top-24 lg:h-fit lg:py-2">
-          <p className="eyebrow">{CATEGORY_LABELS[product.category]}</p>
-          <h1 className="mt-3 font-display text-4xl font-light leading-tight sm:text-5xl">
+          <p className="label-sm text-brand">{CATEGORY_LABELS[product.category]}</p>
+          <h1 className="mt-3 font-display text-4xl uppercase leading-tight sm:text-5xl">
             {product.name}
           </h1>
           <div className="mt-4 flex items-center gap-3">
@@ -104,7 +104,7 @@ export function ProductDetail({ product }: { product: Product }) {
                 <span className="text-sm text-fg-faint line-through">
                   {formatPrice(product.compareAt)}
                 </span>
-                <span className="bg-accent px-2 py-0.5 text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-accent-fg">
+                <span className="bg-varsity px-2 py-0.5 label-xs text-chalk">
                   Save {formatPrice(product.compareAt - product.price)}
                 </span>
               </>
@@ -188,7 +188,7 @@ export function ProductDetail({ product }: { product: Product }) {
             </div>
             <button
               onClick={handleAdd}
-              className="flex flex-1 items-center justify-center gap-2 bg-accent py-4 text-xs font-semibold uppercase tracking-[0.16em] text-accent-fg transition-opacity hover:opacity-90"
+              className="flex flex-1 items-center justify-center gap-2 bg-obsidian py-4 label-lg text-chalk transition-transform hover:scale-[1.01]"
             >
               {added ? (
                 <>

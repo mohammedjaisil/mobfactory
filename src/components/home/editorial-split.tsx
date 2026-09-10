@@ -18,10 +18,10 @@ export function EditorialSplit() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-black/10" />
             <div className="absolute inset-0 flex flex-col justify-end p-8 lg:p-12">
-              <p className="text-[0.7rem] font-medium uppercase tracking-[0.22em] text-white/75">
+              <p className="label-sm text-varsity-soft">
                 Limited · Numbered
               </p>
-              <h3 className="mt-3 font-display text-4xl font-light text-white lg:text-5xl">
+              <h3 className="mt-3 font-display text-4xl uppercase text-white lg:text-5xl">
                 The Collector Series
               </h3>
               <p className="mt-3 max-w-sm text-sm text-white/80">
@@ -29,7 +29,7 @@ export function EditorialSplit() {
               </p>
               <Link
                 href="/collections/collector"
-                className="mt-6 inline-flex w-fit items-center gap-2 bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#0f102c] transition-transform hover:scale-[1.02]"
+                className="mt-6 inline-flex w-fit items-center gap-2 bg-white px-6 py-3 label-lg text-obsidian transition-transform hover:scale-[1.02]"
               >
                 Explore <ArrowRight className="h-4 w-4" />
               </Link>
@@ -48,10 +48,10 @@ export function EditorialSplit() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-black/10" />
             <div className="absolute inset-0 flex flex-col justify-end p-8 lg:p-12">
-              <p className="text-[0.7rem] font-medium uppercase tracking-[0.22em] text-white/75">
-                The MOBFACTORY standard
+              <p className="label-sm text-varsity-soft">
+                The Mob Factory standard
               </p>
-              <h3 className="mt-3 font-display text-4xl font-light text-white lg:text-5xl">
+              <h3 className="mt-3 font-display text-4xl uppercase text-white lg:text-5xl">
                 Made to last.
               </h3>
               <p className="mt-3 max-w-sm text-sm text-white/80">
@@ -60,7 +60,7 @@ export function EditorialSplit() {
               </p>
               <Link
                 href="/about"
-                className="mt-6 inline-flex w-fit items-center gap-2 border border-white/50 px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-white transition-colors hover:bg-white/10"
+                className="mt-6 inline-flex w-fit items-center gap-2 border border-white/50 px-6 py-3 label-lg text-white transition-colors hover:bg-white/10"
               >
                 Our story <ArrowRight className="h-4 w-4" />
               </Link>

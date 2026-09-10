@@ -12,14 +12,14 @@ export function FeaturedCollection() {
       <div className="mx-auto max-w-[1680px] px-4 py-20 sm:px-6 lg:px-10">
         <Reveal className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <p className="eyebrow">New this season</p>
-            <h2 className="mt-3 font-display text-4xl font-light sm:text-5xl">
-              The essentials edit.
+            <p className="label-sm text-brand">Raw spec gear</p>
+            <h2 className="mt-3 font-display text-4xl uppercase leading-none sm:text-5xl">
+              Mob Factory repertoire
             </h2>
           </div>
           <p className="max-w-xs text-sm text-fg-muted">
-            Our most-wanted pieces, restocked and ready. Considered fabrics, honest
-            fits, made to last.
+            Uncompromising specs, honest fits and fabric that holds its silhouette
+            set after set.
           </p>
         </Reveal>
 
@@ -34,9 +34,9 @@ export function FeaturedCollection() {
         <div className="mt-12 flex justify-center">
           <Link
             href="/shop"
-            className="border border-fg px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] transition-colors hover:bg-accent hover:text-accent-fg"
+            className="label-lg border border-fg px-8 py-3.5 transition-colors hover:bg-obsidian hover:text-chalk"
           >
-            Shop all menswear
+            Shop all drops
           </Link>
         </div>
       </div>

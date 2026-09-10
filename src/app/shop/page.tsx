@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/page-header";
 
 export const metadata: Metadata = {
   title: "Shop All Menswear",
-  description: "Browse the full MOBFACTORY menswear collection — tees, shirts, outerwear, trousers and more.",
+  description: "Browse the full MOB FACTORY collection — tees, shirts, outerwear, trousers and more.",
 };
 
 export default async function ShopPage({
@@ -20,9 +20,9 @@ export default async function ShopPage({
   return (
     <>
       <PageHeader
-        eyebrow="Menswear"
-        title="Shop All"
-        description="The complete collection. Elevated essentials and collector drops, all in one place."
+        eyebrow="Heavy Iron Division"
+        title="Shop All Drops"
+        description="Every batch in one place. Heavyweight essentials, iron gear and collector drops."
       />
       <ShopView products={products} initialSort={initialSort} />
     </>

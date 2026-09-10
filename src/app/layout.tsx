@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import { Albert_Sans, Bebas_Neue } from "next/font/google";
+import { Bebas_Neue, Manrope } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { CartDrawer } from "@/components/cart-drawer";
 import { AnnouncementBar } from "@/components/announcement-bar";
+import { SpecTicker } from "@/components/spec-ticker";
 
-// Body / UI — clean geometric sans (à la gymkha's Albert Sans)
-const albert = Albert_Sans({
+// Body / UI — Manrope carries the heavy uppercase label scale without smearing
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-albert",
+  variable: "--font-manrope",
   display: "swap",
 });
 
-// Display headings — tall condensed all-caps (à la gymkha's Bebas Neue)
+// Display headings — tall condensed all-caps, stencilled-iron treatment
 const bebas = Bebas_Neue({
   subsets: ["latin"],
   weight: "400",
@@ -24,15 +25,22 @@ const bebas = Bebas_Neue({
 
 export const metadata: Metadata = {
   title: {
-    default: "MOBFACTORY — Menswear, Redefined",
-    template: "%s · MOBFACTORY",
+    default: "MOB FACTORY — Heavy Iron Athletic Co.",
+    template: "%s · MOB FACTORY",
   },
   description:
-    "MOBFACTORY is a premium menswear label. Elevated essentials, seasonal drops and collector series — engineered for the modern man.",
-  keywords: ["menswear", "men's clothing", "premium fashion", "mobfactory", "streetwear"],
+    "Heavyweight luxury gymwear built in the trenches. 260 GSM comb-ring cotton, zero-deform ribbing and limited batch drops — engineered for the heavy sets.",
+  keywords: [
+    "gymwear",
+    "heavyweight tee",
+    "260 gsm",
+    "mob factory",
+    "athletic apparel",
+    "streetwear",
+  ],
   openGraph: {
-    title: "MOBFACTORY — Menswear, Redefined",
-    description: "Premium menswear. Elevated essentials & collector drops.",
+    title: "MOB FACTORY — Heavy Iron Athletic Co.",
+    description: "Heavyweight luxury gymwear. Engineered for the heavy sets.",
     type: "website",
   },
 };
@@ -41,7 +49,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${albert.variable} ${bebas.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${manrope.variable} ${bebas.variable}`}>
       <body suppressHydrationWarning className="min-h-screen bg-bg text-fg antialiased">
         <ThemeProvider
           attribute="class"
@@ -51,6 +59,7 @@ export default function RootLayout({
         >
           <AnnouncementBar />
           <Header />
+          <SpecTicker />
           <main className="min-h-[60vh]">{children}</main>
           <Footer />
           <CartDrawer />

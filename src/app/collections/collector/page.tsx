@@ -9,7 +9,7 @@ import { Reveal } from "@/components/reveal";
 export const metadata: Metadata = {
   title: "The Collector Series",
   description:
-    "Small-batch, numbered menswear in premium fabrics. Limited drops from MOBFACTORY — once they’re gone, they’re gone.",
+    "Small-batch, numbered menswear in premium fabrics. Limited drops from MOB FACTORY — once they’re gone, they’re gone.",
 };
 
 export default function CollectorPage() {
@@ -33,10 +33,10 @@ export default function CollectorPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/40" />
         </div>
         <div className="relative z-10 mx-auto flex h-full max-w-[1680px] flex-col justify-end px-4 pb-14 sm:px-6 lg:px-10">
-          <p className="text-[0.7rem] font-medium uppercase tracking-[0.28em] text-white/80">
+          <p className="label-sm text-varsity-soft">
             Limited · Numbered · Never restocked
           </p>
-          <h1 className="mt-4 max-w-3xl font-display text-5xl font-light leading-none text-white sm:text-7xl">
+          <h1 className="mt-4 max-w-3xl font-display text-5xl uppercase leading-none text-white sm:text-7xl">
             The Collector Series
           </h1>
           <p className="mt-4 max-w-lg text-sm text-white/80">
@@ -49,8 +49,8 @@ export default function CollectorPage() {
       {/* Products */}
       <section className="mx-auto max-w-[1680px] px-4 py-16 sm:px-6 lg:px-10">
         <Reveal className="mb-10">
-          <p className="eyebrow">The current drop</p>
-          <h2 className="mt-3 font-display text-4xl font-light sm:text-5xl">In the series now</h2>
+          <p className="label-sm text-brand">The current batch</p>
+          <h2 className="mt-3 font-display text-4xl uppercase sm:text-5xl">In the series now</h2>
         </Reveal>
         <div className="grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-4">
           {(collector.length ? collector : rest).map((p, i) => (
@@ -60,19 +60,19 @@ export default function CollectorPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-accent text-accent-fg">
+      <section className="bg-obsidian text-chalk">
         <div className="mx-auto flex max-w-[1680px] flex-col items-start gap-6 px-4 py-16 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-10">
           <div>
-            <h3 className="font-display text-3xl font-light sm:text-4xl">
+            <h3 className="font-display text-3xl uppercase sm:text-4xl">
               Be first to the next drop.
             </h3>
-            <p className="mt-2 max-w-md text-sm text-accent-fg/70">
+            <p className="mt-2 max-w-md text-sm text-heather/70">
               Series pieces sell out in hours. Members get early access.
             </p>
           </div>
           <Link
             href="/shop"
-            className="inline-flex items-center gap-2 bg-accent-fg px-8 py-4 text-xs font-semibold uppercase tracking-[0.16em] text-accent transition-transform hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 bg-chalk px-8 py-4 label-lg text-obsidian transition-transform hover:scale-[1.02]"
           >
             Shop everything <ArrowRight className="h-4 w-4" />
           </Link>

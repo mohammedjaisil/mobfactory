@@ -156,7 +156,7 @@ export const products: Product[] = [
     badge: "Limited",
     season: "Summer",
     description:
-      "A screen-printed statement tee from the Collector Series. Heavyweight, oversized, unmistakably MOBFACTORY.",
+      "A screen-printed statement tee from the Collector Series. Heavyweight, oversized, unmistakably MOB FACTORY.",
     details: ["220gsm cotton", "Oversized fit", "Hand screen-printed", "Limited to 300 pieces"],
   },
   {
